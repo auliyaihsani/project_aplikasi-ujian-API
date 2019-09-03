@@ -13,3 +13,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('soal', 'Api\Soal\SoalController')->except([
     'create', 'edit'
 ]);
+
+Route::get('peraturan', 'Api\Peraturan\PeraturanController@index');
+Route::put('peraturan', 'Api\Peraturan\PeraturanController@update');
