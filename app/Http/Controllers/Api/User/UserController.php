@@ -34,6 +34,17 @@ class UserController extends Controller
         }
     }
 
+    public function update(Request $request, $android_id)
+    {   
+        $user=User::where('android_id', $android_id)->first();
+        $user->update($request->all());
+        return response(new UserResource($user), Response::HTTP_CREATED);
+    }
 
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return response('Deleted', Response::HTTP_OK);
+    }
 
 }
