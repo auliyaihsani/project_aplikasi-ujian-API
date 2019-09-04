@@ -26,7 +26,6 @@ class PeraturanController extends Controller
         $id = 1;
         $peraturan=Pengaturan::find($id);
         $peraturan->update($request->all());
-        
         return response(new PeraturanResource($peraturan), Response::HTTP_CREATED);
     }
 }
