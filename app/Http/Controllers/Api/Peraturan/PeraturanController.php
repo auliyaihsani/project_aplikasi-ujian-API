@@ -18,7 +18,8 @@ class PeraturanController extends Controller
 
     public function index()
     {
-         return PeraturanResource::collection(Pengaturan::latest()->get());
+        //  return PeraturanResource::collection(Pengaturan::latest()->get(1));
+        return new PeraturanResource(Pengaturan::find(1));
     }
 
     public function update(Request $request)

@@ -49,5 +49,11 @@ class NilaiController extends Controller
         ], 202);
     }
 
+    public function destroy(Nilai $nilai)
+    {
+        $nilai->delete();
+        return response('Deleted', Response::HTTP_OK);
+    }
+
 
 }
